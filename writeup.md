@@ -197,3 +197,39 @@ Impact: Efficient data structures, gating strategies, and pruning of tracks are 
 
 ## 4. Can you think of ways to improve your tracking results in the future? -->
 
+Optimize Parameter Settings for Lower RMSE
+
+The default values in misc/params.py offer a starting point for basic functionality, but there's significant potential to enhance accuracy through careful parameter tuning. By adjusting variables like the process noise (q), measurement noise covariances, and scoring thresholds, we can:
+
+Improve the filter’s responsiveness,
+Reduce false positives/negatives,
+Drive the RMSE (Root Mean Square Error) significantly lower.
+Using LiDAR standard deviations and tuning insights from previous projects (e.g., the midterm), we can better model real-world sensor characteristics for cleaner estimates.
+
+🔗 2. Incorporate More Sophisticated Data Association Techniques
+
+Our current association method is fairly straightforward and may not handle ambiguous or crowded scenes optimally. Future versions could integrate more advanced techniques such as:
+
+Global Nearest Neighbor (GNN): Evaluates all possible assignments across tracks and measurements and selects the globally optimal set.
+Joint Probabilistic Data Association (JPDA): Handles measurement-to-track ambiguity by considering probabilities for all possible associations.
+These approaches improve tracking stability, particularly in cluttered environments or when multiple objects are in close proximity.
+
+📷 3. Fuse Vision-Based Detections with LiDAR
+
+Expanding the tracking pipeline to include camera-based object detections from earlier modules (e.g., Project 1) can provide additional context—such as object type and visual confirmation.
+
+This fusion would support more robust decision-making, particularly when LiDAR data is sparse or noisy.
+It also allows for visual cross-verification of tentative or misaligned tracks.
+📏 4. Extend Kalman Filter to Estimate Object Dimensions
+
+Currently, width, length, and height are updated using raw LiDAR inputs. A more robust approach would be to:
+
+Integrate these attributes into the Kalman Filter's state vector,
+Continuously update them over time using both LiDAR and camera measurements,
+Filter out noise in size estimation to achieve smoother, more realistic bounding boxes.
+🚗 5. Use a More Realistic Motion Model
+
+The existing constant velocity (CV) model is simple and effective for basic movement, but it's not always realistic—especially for vehicles. A better alternative:
+
+Bicycle model or constant turn rate and velocity (CTRV) models better reflect constrained motion dynamics of vehicles.
+These non-linear models take into account steering and turning, improving prediction accuracy during curves or acceleration.
