@@ -72,6 +72,11 @@ Increment the N count and update last_id
 ![Image](img/step2output.mov)
 
 
+![Image](img/s1.png)
+![Image](img/s2.png)
+![Image](img/s3.png)
+
+
 ## 1. Write a short recap of the four tracking steps and what you implemented there (filter, track management, association, camera fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
 
 Filter Implementation (EKF)
