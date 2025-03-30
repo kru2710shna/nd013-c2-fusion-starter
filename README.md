@@ -70,6 +70,7 @@ Increment the N count and update last_id
 ## Result 
 
 ![Image](img/step2output.mov)
+![s3](https://github.com/user-attachments/assets/991cca4e-d683-4902-8dd1-b29eb3d6fb08)
 
 
 ![Image](img/s1.png)
